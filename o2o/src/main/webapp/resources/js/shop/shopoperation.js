@@ -10,11 +10,12 @@ $(function() {
 	// 用于店铺注册时候的店铺类别以及区域列表的初始化的URL
 	var initUrl = 'getshopinitinfo';
 	// 注册店铺的URL
-	var registerShopUrl = '/o2o/shopadmin/registershop';
+	var registerShopUrl = 'registershop';
 	// 编辑店铺前需要获取店铺信息，这里为获取当前店铺信息的URL
-	var shopInfoUrl = "/o2o/shopadmin/getshopbyid?shopId=" + shopId;
+	var shopInfoUrl = "getshopbyid?shopId=" + shopId;
 	// 编辑店铺信息的URL
-	var editShopUrl = '/o2o/shopadmin/modifyshop';
+	var editShopUrl = 'modifyshop';
+    // var editShopUrl = '/o2o/shopadmin/modifyshop';
 	// 判断是编辑操作还是注册操作
 	if (!isEdit) {
 		getShopInitInfo();
@@ -89,7 +90,7 @@ $(function() {
 				return !this.selected;
 			}).data('id')
 		};
-		// 选择选定好的区域信息
+		//选择选定好的区域信息
 		shop.area = {
 			areaId : $('#area').find('option').not(function() {
 				return !this.selected;
@@ -123,7 +124,7 @@ $(function() {
 					$.toast('提交成功！');
 					if (!isEdit) {
 						// 若为注册操作，成功后返回店铺列表页
-						window.location.href = "/o2o/shopadmin/shoplist";
+						window.location.href = "/shopadmin/shoplist";
 					}
 				} else {
 					$.toast('提交失败！' + data.errMsg);

@@ -7,6 +7,9 @@ import java.util.List;
 
 public interface ShopCategoryDao {
 
-
-    List<ShopCategory> queryShopCategory(@Param("ShopCategoryCondition") ShopCategory shopCategory);
+/*
+* 更具查询条件返回ShopCategory列表
+*
+* */
+    List<ShopCategory> queryShopCategory(@Param("shopCategoryCondition") ShopCategory shopCategoryCondition);
 }

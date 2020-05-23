@@ -8,8 +8,23 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
     <!-- 配置整合mybatis过程 -->
     <!-- 1.配置数据库相关参数properties的属性：+${url} -->
-    <context:property-placeholder location="classpath:jdbc.properties"/>
+    <!--<bean class="com.o2o.pn.util.EncryptPropertyPlaceholderConfigurer">-->
+        <!--<property name="locations">-->
+            <!--<list>-->
+                <!--<value>classpath:jdbc.properties</value>-->
+            <!--</list>-->
+        <!--</property>-->
+        <!--<property name="fileEncoding" value="UTF-8"/>-->
+    <!--</bean>-->
+    <context:property-placeholder location="classpath:jdbc.properties" ignore-unresolvable="true"/>
+    <!--<context:property-placeholder location="classpath*:*.properties" />-->
+    <!--<context:property-placeholder location="classpath:jdbc.properties,classpath:redis.properties"/>-->
+    <!--<context:property-placeholder location="classpath:jdbc.properties,classpath:redis.properties" ignore-unresolvable="true"/>-->
+    <!--&lt;!&ndash;配置redis相关参数&ndash;&gt;-->
+    <!--<context:property-placeholder location="classpath:redis.properties" ignore-unresolvable="true"/>-->
     <!--2.配置数据库连接池-->
+    <!--mysql主从库配置1-->
+    <!--<bean id="abstractDataSource" abstract="true" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">-->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
         <!--配置连接池属性-->
         <property name="driverClass" value="${jdbc.driver}"/>
@@ -26,6 +41,40 @@
         <!--获取连接失败重试次数-->
         <property name="acquireRetryAttempts" value="2"/>
     </bean>
+    <!--mysql主从库配置2-->
+    <!--<bean id="master" parent="abstractDataSource">-->
+        <!--&lt;!&ndash;配置连接池属性&ndash;&gt;-->
+        <!--<property name="driverClass" value="${jdbc.driver}"/>-->
+        <!--<property name="jdbcUrl" value="${jdbc.master.url}"/>-->
+        <!--<property name="user" value="${jdbc.username}"/>-->
+        <!--<property name="password" value="${jdbc.password}"/>-->
+
+    <!--</bean>-->
+    <!--<bean id="slave" parent="abstractDataSource">-->
+        <!--&lt;!&ndash;配置连接池属性&ndash;&gt;-->
+        <!--<property name="driverClass" value="${jdbc.driver}"/>-->
+        <!--<property name="jdbcUrl" value="${jdbc.slave.url}"/>-->
+        <!--<property name="user" value="${jdbc.username}"/>-->
+        <!--<property name="password" value="${jdbc.password}"/>-->
+
+
+    <!--mysql主从库配置3 配置动态数据源，这儿的targetDataSources就是路由数据源所对应的名称-->
+    <!--<bean id = "dynamicDataSource" class="com.o2o.pn.dao.split.DynamicDataSource">-->
+    <!--<property name="targetDataSources">-->
+        <!--<map>-->
+            <!--<entry value-ref="master" key="master"/>-->
+            <!--<entry value-ref="slave" key="slave"/>-->
+        <!--</map>-->
+    <!--</property>-->
+
+    <!--</bean>-->
+    <!--<bean id ="dataSource" class="org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy">-->
+        <!--<property name="targetDataSource">-->
+        <!--<ref bean="dynamicDataSource"/>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+    <!--</bean>-->
     <!--3.配置SqlSessionFactory对象-->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <!--注入数据连接池-->

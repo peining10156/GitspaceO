@@ -6,8 +6,8 @@ public class HeadLine{
 
     private Long lineId;
     private String lineName;
-    private String lineLnk;
-    private String lineimg;
+    private String lineLink;
+    private String lineImg;
     private Integer priority;
     //0不可用；1可用
     private Integer enableStatus;
@@ -31,20 +31,20 @@ public class HeadLine{
         this.lineName = lineName;
     }
 
-    public String getLineLnk() {
-        return lineLnk;
+    public String getLineLink() {
+        return lineLink;
     }
 
-    public void setLineLnk(String lineLnk) {
-        this.lineLnk = lineLnk;
+    public void setLineLink(String lineLink) {
+        this.lineLink = lineLink;
     }
 
-    public String getLineimg() {
-        return lineimg;
+    public String getLineImg() {
+        return lineImg;
     }
 
-    public void setLineimg(String lineimg) {
-        this.lineimg = lineimg;
+    public void setLineImg(String lineImg) {
+        this.lineImg = lineImg;
     }
 
     public Integer getPriority() {

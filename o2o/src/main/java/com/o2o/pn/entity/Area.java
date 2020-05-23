@@ -22,36 +22,36 @@ public class Area{
         return lastEditTime;
     }
 
-    public Integer getAreId() {
+    public Integer getAreaId() {
         return areaId;
     }
 
     public Integer getPriorty() {
         return priority;
-    }
+        }
 
-    public String getAreaName() {
+public String getAreaName() {
         return areaName;
-    }
+        }
 
-    public void setAreaName(String areaName) {
+public void setAreaName(String areaName) {
         this.areaName = areaName;
-    }
+        }
 
-    public void setAreId(Integer areId) {
-        this.areaId = areId;
-    }
+public void setAreaId(Integer areaId) {
+        this.areaId = areaId;
+        }
 
-    public void setCreateTime(Date createTime) {
+public void setCreateTime(Date createTime) {
         this.createTime = createTime;
-    }
+        }
 
-    public void setLastEditTime(Date lastEditTime) {
+public void setLastEditTime(Date lastEditTime) {
         this.lastEditTime = lastEditTime;
-    }
+        }
 
-    public void setPriorty(Integer priorty) {
+public void setPriorty(Integer priorty) {
         this.priority = priorty;
-    }
+        }
 
-}
+        }

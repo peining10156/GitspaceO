@@ -11,11 +11,16 @@ public class Product{
     private String productDesc;
     //简略图
     private String imgAddr;
+    //原价
     private String normalPrice;
+    //现价
     private String promotionPrice;
+    //权重
     private Integer priority;
+    //积分
+    private Integer point;
     private Date createTime;
-    private Date laseEditTime;
+    private Date lastEditTime;
     //-1不可用 0下架 1在前端展示系统展示；
     private Integer enableStatus;
 
@@ -23,6 +28,18 @@ public class Product{
 
     private ProductCategory productCategory;
     private Shop shop;
+
+    public Integer getPoint() {
+        return point;
+    }
+
+    public void setPoint(Integer point) {
+        this.point = point;
+    }
+
+    public Date getLastEditTime() {
+        return lastEditTime;
+    }
 
     public Long getProductId() {
         return productId;
@@ -88,12 +105,9 @@ public class Product{
         this.createTime = createTime;
     }
 
-    public Date getLaseEditTime() {
-        return laseEditTime;
-    }
 
-    public void setLaseEditTime(Date laseEditTime) {
-        this.laseEditTime = laseEditTime;
+    public void setLastEditTime(Date lastEditTime) {
+        this.lastEditTime = lastEditTime;
     }
 
     public Integer getEnableStatus() {

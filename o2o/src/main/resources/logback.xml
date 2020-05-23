@@ -57,7 +57,7 @@
     <!-- ERROR -->
     <appender name="errorAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <!-- 文件路径 -->
-        <file>${log.filePath}/erorr.log</file>
+        <file>${log.filePath}/error.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- 文件名称 -->
             <fileNamePattern>${log.filePath}/error/error.%d{yyyy-MM-dd}.log.gz

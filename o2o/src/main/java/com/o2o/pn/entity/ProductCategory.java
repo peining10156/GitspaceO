@@ -1,7 +1,9 @@
 package com.o2o.pn.entity;
 
 import java.util.Date;
-
+/*
+* 商品类别实体类
+* */
 public class ProductCategory{
     private Long productCategoryId;
     private Long shopId;

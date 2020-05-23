@@ -7,8 +7,18 @@ public class PersonInfo{
     private Long userId;
 
     private String name;
-    private String prifileImg;
-    private String emil;
+
+    public String getProfileImg() {
+        return profileImg;
+    }
+
+    public void setProfileImg(String profileImg) {
+        this.profileImg = profileImg;
+    }
+
+    private String profileImg;
+
+    private String email;
     private String gender;
     private Integer enableStatus;
     private Integer userType;
@@ -31,20 +41,12 @@ public class PersonInfo{
         this.name = name;
     }
 
-    public String getPrifileImg() {
-        return prifileImg;
+    public String getEmail() {
+        return email;
     }
 
-    public void setPrifileImg(String prifileImg) {
-        this.prifileImg = prifileImg;
-    }
-
-    public String getEmil() {
-        return emil;
-    }
-
-    public void setEmil(String emil) {
-        this.emil = emil;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getGender() {
